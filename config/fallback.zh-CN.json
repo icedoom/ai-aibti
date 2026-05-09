@@ -1,0 +1,5 @@
+{
+  "version": "collection-v1.0.0",
+  "locale": "zh-CN",
+  "note": "离线 fallback 采集规则。客户端只整理特征，最终卡片由 Web 基于特征组合。"
+}

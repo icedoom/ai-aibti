@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI 亲密度"
+  short_description: "生成安全可分享的 AI 协作关系卡"
+  default_prompt: "Use $ai-intimacy to analyze my latest Codex session and generate a privacy-safe AIBTI relationship card."
+
+policy:
+  allow_implicit_invocation: true

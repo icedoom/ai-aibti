@@ -1,0 +1,190 @@
+{
+  "version": "labels-v1.0.0",
+  "locale": "zh-CN",
+  "maxTags": 4,
+  "minStrongConfidence": 0.55,
+  "headlinePolicy": {
+    "purpose": "headline 是关系台词，不负责重复解释标签。",
+    "rules": [
+      "headline 不直接复用标签原词",
+      "headline 最多借用一个标签意象",
+      "headline 基于当前用户语言环境本地化",
+      "headline 不暴露工作内容、代码、文件名、项目名或客户信息"
+    ]
+  },
+  "combinationRules": [
+    {
+      "id": "rules_are_mine",
+      "label": "规矩我来定",
+      "group": "control_depth",
+      "strong": true,
+      "all": [
+        {"dimension": "dominance", "op": ">=", "level": 4},
+        {"dimension": "depth", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "trust_but_not_loose",
+      "label": "信任但不放任",
+      "group": "control_trust",
+      "strong": true,
+      "all": [
+        {"dimension": "dominance", "op": ">=", "level": 4},
+        {"dimension": "trust", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "hard_mouth_same_freq",
+      "label": "嘴硬但同频",
+      "group": "tone_fit",
+      "strong": false,
+      "all": [
+        {"dimension": "sweetness", "op": "<=", "level": 3},
+        {"dimension": "fit", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "deep_and_smooth",
+      "label": "越聊越上道",
+      "group": "depth_fit",
+      "strong": true,
+      "all": [
+        {"dimension": "depth", "op": ">=", "level": 4},
+        {"dimension": "fit", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "hands_off_safe",
+      "label": "放手也安心",
+      "group": "trust_fit",
+      "strong": true,
+      "all": [
+        {"dimension": "trust", "op": ">=", "level": 4},
+        {"dimension": "fit", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "good_words_good_fit",
+      "label": "好好说也懂",
+      "group": "tone_fit",
+      "strong": true,
+      "all": [
+        {"dimension": "sweetness", "op": ">=", "level": 4},
+        {"dimension": "fit", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "let_it_carry",
+      "label": "今天让它带飞",
+      "group": "ai_led_trust",
+      "strong": true,
+      "all": [
+        {"dimension": "dominance", "op": "<=", "level": 2},
+        {"dimension": "trust", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "watching_closely",
+      "label": "我盯得很紧",
+      "group": "control_low_trust",
+      "strong": true,
+      "all": [
+        {"dimension": "trust", "op": "<=", "level": 2},
+        {"dimension": "dominance", "op": ">=", "level": 4}
+      ]
+    },
+    {
+      "id": "still_testing",
+      "label": "还在试探期",
+      "group": "low_fit_depth",
+      "strong": false,
+      "all": [
+        {"dimension": "depth", "op": "<=", "level": 2},
+        {"dimension": "fit", "op": "<=", "level": 2}
+      ]
+    }
+  ],
+  "fallbackRules": [
+    {
+      "id": "full_control",
+      "label": "我控了全场",
+      "group": "control",
+      "dimension": "dominance",
+      "op": ">=",
+      "level": 5,
+      "strong": true
+    },
+    {
+      "id": "i_decide",
+      "label": "我说了算",
+      "group": "control",
+      "dimension": "dominance",
+      "op": ">=",
+      "level": 4,
+      "strong": true
+    },
+    {
+      "id": "let_it_try",
+      "label": "放手让它试",
+      "group": "trust",
+      "dimension": "trust",
+      "op": ">=",
+      "level": 4,
+      "strong": true
+    },
+    {
+      "id": "foundation_talk",
+      "label": "聊到地基",
+      "group": "depth",
+      "dimension": "depth",
+      "op": ">=",
+      "level": 5,
+      "strong": true
+    },
+    {
+      "id": "deeper_talk",
+      "label": "越聊越深",
+      "group": "depth",
+      "dimension": "depth",
+      "op": ">=",
+      "level": 4,
+      "strong": true
+    },
+    {
+      "id": "one_look",
+      "label": "一个眼神它就懂",
+      "group": "fit",
+      "dimension": "fit",
+      "op": ">=",
+      "level": 5,
+      "strong": true
+    },
+    {
+      "id": "gets_me",
+      "label": "挺懂我",
+      "group": "fit",
+      "dimension": "fit",
+      "op": ">=",
+      "level": 4,
+      "strong": true
+    },
+    {
+      "id": "sweet_today",
+      "label": "今天有点甜",
+      "group": "sweetness",
+      "dimension": "sweetness",
+      "op": ">=",
+      "level": 5,
+      "strong": true
+    },
+    {
+      "id": "sparks",
+      "label": "火药味有点浓",
+      "group": "sweetness",
+      "dimension": "sweetness",
+      "op": "<=",
+      "level": 2,
+      "strong": false
+    }
+  ]
+}
