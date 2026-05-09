@@ -1,5 +1,7 @@
 # AI Intimacy / AIBTI
 
+[中文说明](README.zh-CN.md)
+
 A Codex skill that turns AI-tool sessions into privacy-safe, shareable AIBTI relationship cards with playful localized copy and deterministic image rendering.
 
 <p align="center">
